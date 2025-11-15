@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bảng Quản Lý Truyện Online</title>
+  <style>
+    /* ========== RESET + FONT ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      display: flex;
+      min-height: 100vh;
+      background: #f3f6fa;
+      color: #333;
+    }
+
+    /* ========== SIDEBAR ========== */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(180deg, #1e293b, #334155);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar h2 {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+    .menu {
+      list-style: none;
+      flex: 1;
+    }
+    .menu li {
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .menu li:hover,
+    .menu li.active {
+      background: #38bdf8;
+      color: white;
+    }
+    .footer {
+      font-size: 12px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    /* ========== MAIN ========== */
+    .main {
+      flex: 1;
+      padding: 25px 35px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    header h1 {
+      font-size: 24px;
+      color: #1e293b;
+    }
+    header input {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      width: 220px;
+    }
+
+    /* ========== DASHBOARD CARDS ========== */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .card h3 {
+      font-size: 16px;
+      color: #475569;
+      margin-bottom: 5px;
+    }
+    .card p {
+      font-size: 26px;
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    /* ========== TABLE ========== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    thead {
+      background: #38bdf8;
+      color: white;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    tr:hover {
+      background: #f9fafb;
+    }
+
+    /* ========== TABS ========== */
+    .tabs {
+      display: flex;
+      margin-bottom: 15px;
+      gap: 10px;
+    }
+    .tab {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .tab.active {
+      background: #38bdf8;
+      color: white;
+      border-color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>StoryManager</h2>
+    <ul class="menu">
+      <li class="active">📚 Thư viện truyện</li>
+      <li>📖 Chương</li>
+      <li>👤 Người dùng</li>
+      <li>💬 Diễn đàn</li>
+      <li>💌 Thông báo</li>
+      <li>🚨 Báo cáo</li>
+      <li>💭 Chatbox</li>
+    </ul>
+    <div class="footer">© 2025 StoryManager</div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <header>
+      <h1>📚 Quản lý thư viện truyện</h1>
+      <input type="text" placeholder="Tìm truyện..." />
+    </header>
+
+    <div class="dashboard">
+      <div class="card">
+        <h3>Tổng truyện</h3>
+        <p>128</p>
+      </div>
+      <div class="card">
+        <h3>Người dùng</h3>
+        <p>57</p>
+      </div>
+      <div class="card">
+        <h3>Chương</h3>
+        <p>1,243</p>
+      </div>
+      <div class="card">
+        <h3>Báo cáo</h3>
+        <p>3</p>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active">Thư viện</div>
+      <div class="tab">Người dùng</div>
+      <div class="tab">Báo cáo</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tên truyện</th>
+          <th>Tác giả</th>
+          <th>Thể loại</th>
+          <th>Trạng thái</th>
+          <th>Ngày đăng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Đấu La Đại Lục</td>
+          <td>Đường Gia Tam Thiếu</td>
+          <td>Huyền huyễn</td>
+          <td>Hoàn thành</td>
+          <td>2024-04-02</td>
+        </tr>
+        <tr>
+          <td>Toàn Chức Pháp Sư</td>
+          <td>Loạn</td>
+          <td>Phép thuật</td>
+          <td>Đang ra</td>
+          <td>2024-07-20</td>
+        </tr>
+        <tr>
+          <td>Conan</td>
+          <td>Aoyama Gosho</td>
+          <td>Trinh thám</td>
+          <td>Đang ra</td>
+          <td>2024-09-11</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
